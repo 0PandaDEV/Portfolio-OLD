@@ -1,0 +1,208 @@
+@font-face {
+  font-family: calibre;
+  src: url("./fonts/calibre.woff2") format("woff2");
+}
+
+:root {
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+@media (min-width: 770px) {
+
+  /*for Desktop*/
+  .header {
+    padding: 0px 50px;
+  }
+
+  main.content {
+    padding: 0px 150px;
+  }
+
+  .header-collapse {
+    display: none;
+  }
+
+  .big-heading {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 770px) {
+
+  /*for Mobile*/
+  .header {
+    padding: 0px 25px;
+  }
+
+  main.content {
+    padding: 0px 25px;
+  }
+
+  .header-right {
+    display: none !important;
+  }
+
+  .big-heading {
+    font-size: 40px;
+  }
+}
+
+body {
+  margin: 0px;
+  width: 100%;
+  min-height: 100%;
+  background-color: #252a33;
+  color: #8892b0;
+  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  transition: var(--transition);
+  filter: none !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  color: #ccd6f6;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.header-right {
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+}
+
+.header-right ol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.header-right ol li {
+  margin: 0px 5px;
+  position: relative;
+  counter-increment: item 1;
+  font-size: var(--fz-xs);
+}
+
+.header-links {
+  font-size: 13px;
+  line-height: 17px;
+  color: #ccd6f6;
+  text-decoration: none;
+  padding: 10px;
+  transition: var(--transition);
+}
+
+.header-links:hover {
+  color: #6200ff;
+}
+
+.number {
+  color: #6200ff;
+}
+
+main {
+  margin: 0px auto;
+  max-width: 1600px;
+  min-height: 100vh;
+  padding: 200px 150px;
+}
+
+.hero {
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 0px;
+}
+
+section {
+  margin: 0px auto;
+  padding: 100px 0px;
+  max-width: 1000px;
+}
+
+.hero h1 {
+  margin: 0px 0px 30px 4px;
+  color: #6200ff;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hero h3 {
+  margin-top: 10px;
+  color: var(--slate);
+  line-height: 0.9;
+}
+
+.hero p {
+  margin: 20px 0px 0px;
+  max-width: 540px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: #ccd6f6;
+  line-height: 1.1;
+}
+
+.big-heading {
+  margin: 0px;
+  font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+}
+
+.hero .github-btn {
+  color: #6200ff;
+  background-color: transparent;
+  border: 1px solid #6200ff;
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 50px;
+}
