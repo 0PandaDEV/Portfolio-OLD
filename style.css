@@ -12,12 +12,13 @@
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: inherit;
 }
 
 @media (min-width: 770px) {
-
   /*for Desktop*/
   .header {
     padding: 0px 50px;
@@ -46,10 +47,14 @@
   .footer_socials {
     display: none;
   }
+  .inner {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 50px;
+  }
 }
 
 @media (max-width: 770px) {
-
   /*for Mobile*/
   .header {
     padding: 0px 25px;
@@ -63,7 +68,9 @@
     font-size: 40px;
   }
 
-  .socials, .email, .header-right {
+  .socials,
+  .email,
+  .header-right {
     display: none !important;
   }
 
@@ -98,6 +105,18 @@
     width: 20px;
     height: 20px;
   }
+  .inner {
+    display: block;
+  }
+  .numbered-heading::after {
+    width: 100% !important;
+    margin-left: 10px !important;
+  }
+  .full-logo {
+    margin: 50px auto 0px !important;
+    width: 70% !important;
+    max-width: 300px;
+  }
 }
 
 html {
@@ -126,7 +145,8 @@ body {
   min-height: 100%;
   background-color: #252a33;
   color: #8892b0;
-  font-family: 'Calibre-regular', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  font-family: "Calibre-regular", "Inter", "San Francisco", "SF Pro Text",
+    -apple-system, system-ui, sans-serif;
   font-size: 20px;
   line-height: 1.3;
   box-sizing: border-box;
@@ -161,7 +181,7 @@ body {
   position: relative;
   width: 100%;
   color: #ccd6f6;
-  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 .logo {
@@ -261,7 +281,12 @@ section {
   color: #6200ff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0px 0px 10px;
   font-weight: 600;
   color: #ccd6f6;
@@ -270,7 +295,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .big-heading {
   margin: 0px;
-  font-family: 'Calibre-medium', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+  font-family: "Calibre-medium", "Inter", "San Francisco", "SF Pro Text",
+    -apple-system, system-ui, sans-serif;
 }
 
 .hero .github-btn {
@@ -485,34 +511,51 @@ button {
 
 .numbered-heading {
   display: flex;
-  -moz-box-align: center;
   align-items: center;
-  position: relative;
   margin: 10px 0px 40px;
   width: 100%;
   font-size: clamp(26px, 5vw, 32px);
-  white-space: nowrap;
+  font-weight: 600;
+  font-family: Calibre-Medium;
 }
 
 .numbered-heading::before {
-  position: relative;
-  bottom: 4px;
+  padding-top: 6px;
   counter-increment: section 1;
   content: "0" counter(section) ".";
   margin-right: 10px;
   color: #6200ff;
   font-family: monospace;
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(16px, 3vw, 22px);
   font-weight: 400;
 }
 
 .numbered-heading::after {
   display: block;
-  content: "";
-  top: -5px;
   position: relative;
+  content: "";
+  margin-top: 11px;
+  top: -5px;
   width: 300px;
   height: 1px;
   margin-left: 20px;
   background-color: #233554;
+}
+
+p {
+  margin: 0px 0px 15px;
+}
+
+.about-img {
+  position: relative;
+  max-width: 300px;
+}
+
+.full-logo {
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  transition: var(--transition);
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  width: 300px;
 }
