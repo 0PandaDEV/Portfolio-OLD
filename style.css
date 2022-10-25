@@ -517,6 +517,7 @@ button {
   font-size: clamp(26px, 5vw, 32px);
   font-weight: 600;
   font-family: Calibre-Medium;
+  white-space: nowrap;
 }
 
 .numbered-heading::before {
