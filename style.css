@@ -279,6 +279,7 @@ section {
 
 .essentialsp-link {
   color: #6200ff;
+  z-index: -1;
 }
 
 h1,
@@ -355,6 +356,11 @@ a {
   color: inherit;
   position: relative;
   transition: var(--transition);
+  z-index: -1;
+}
+
+img{
+  z-index: -1;
 }
 
 svg {
